@@ -1,4 +1,5 @@
 //  chapter 1
+// let and const
 let name = "Mike";
 name = "Jim";
 let age = 30;

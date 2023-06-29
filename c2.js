@@ -1,4 +1,5 @@
 // chapter2
+// Data Type
 // const name = "Mike"; // 문자형 string
 // const age = 30;
 

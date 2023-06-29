@@ -1,9 +1,11 @@
 // chapter 3
+// Basic Converstaion Box Top 3
 // alert 무언가 알려줌
 // alert('이름을 입력해주세요.');
 
 // prompt 입력 받음
 // 취소를 누르면 null 값이 들어감
+// 입력받은 값의 반환 값은 문자형이다.
 // const name = prompt("이름을 입력하세요.");
 // alert("환영합니다. " + name + "님");
 // alert(`환영합니다. ${name}님`);
