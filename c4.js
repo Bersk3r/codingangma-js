@@ -43,5 +43,12 @@ console.log(
 // 주의 사항
 // console.log(
 // Number(null), // 0
-// Number(undefined) // NaN
+// Number(undefined), // NaN
+// )
+
+// console.log(
+//     Boolean(0), // false
+//     Boolean('0'), // true
+//     Boolean(''), // false
+//     Boolean(' '), // true
 // )
