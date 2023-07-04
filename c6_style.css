@@ -1,0 +1,93 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+/*#box {*/
+/*    width : 200px;*/
+/*    height : 200px;*/
+/*    background-color: green;*/
+/*    text-align: center;*/
+/*    vertical-align: center;*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    border: 2px solid #000;*/
+/*}*/
+
+/*#list {*/
+/*    width: 115px;*/
+/*    height: 80px;*/
+/*    background-color: orange;*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    top: 20%;*/
+/*    border: 2px solid #000;*/
+/*}*/
+
+/*#color {*/
+/*    width: 100px;*/
+/*    height: 40px;*/
+/*    background-color: yellow;*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    top: 25%;*/
+/*    right: 13%;*/
+/*    border: 2px solid #000;*/
+/*}*/
+
+/*#box {*/
+/*    width : 250px;*/
+/*    height : 100px;*/
+/*    background-color: green;*/
+/*    text-align: center;*/
+/*    vertical-align: center;*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    border: 2px solid #000;*/
+/*}*/
+
+/*#txt {*/
+/*    !*width: 115px;*!*/
+/*    !*height: 80px;*!*/
+/*    display: inline-block;*/
+/*    position: relative;*/
+/*    top:40%;*/
+/*    border: 1px solid #000;*/
+/*}*/
+
+#box {
+    width : 200px;
+    height : 200px;
+    background-color: green;
+    display: flex;
+    position: relative;
+    border: 2px solid #000;
+    justify-content: space-around;
+}
+
+#list {
+    background-color: orange;
+    display: flex;
+    position: relative;
+    border: 2px solid #000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#red, #blue, #green, #pink {
+    width: 100px;
+    height: 35px;
+    background-color: yellow;
+    display: flex;
+    position: relative;
+    right: 13%;
+    border: 2px solid #000;
+}
+
+#red.on,#blue.on,#green.on,#pink.on {
+    background-color: red;
+}

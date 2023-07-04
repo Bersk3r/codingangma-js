@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    <link href="./c6_style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <!--<div id="box">
+        <ul id="list">
+            <li id="color">Red</li>
+        </ul>
+    </div>-->
+    <!--<div id="box">
+        <input type="text" id="txt" />
+    </div>-->
+
+    <div id="box">
+        <ul id="list">
+            <li id="red" class="on"><a href="#">Red</a></li>
+            <li id="blue"><a href="#">Blue</a></li>
+            <li id="green"><a href="#">Green</a></li>
+            <li id="pink"><a href="#">Pink</a></li>
+        </ul>
+    </div>
+    <script>
+        // 자신으로부터 발생되는 이벤트 객체는 부모와 그 부모를 통해 전파됨 (하위 -> 상위 요소)
+        // 더 이상 부모 요소가 없을 때까지 반복
+        // 이벤트 버블링 (Event Bubbling)이라고 부름
+        // 대부분의 이벤트는 부모로 전파되나 일부는 그렇지 않음
+        // 버블링 X : focus, blur, mouseenter, mouseleave
+        // 버블링 O : focusin, focusout, mouseover, mouseout
+
+        // 이벤트 버블링은 인위적으로 막는 것도 가능
+        // 이벤트 버블링을 막는 경우가 드물기 때문에 자주 사용되지 않음
+        // event.stopPropagation
+
+        // const box = document.getElementById("box");
+        // const list = document.getElementById("list");
+        // const color = document.getElementById("color");
+        //
+        // document.body.addEventListener('click', ()=> {
+        //     console.log('1. body');
+        // })
+        // box.addEventListener('click', ()=> {
+        //     console.log('2. div');
+        // })
+        // list.addEventListener('click', ()=> {
+        //     console.log('3. ul');
+        // })
+        // color.addEventListener('click', ()=> {
+        //     console.log('4. li');
+        // })
+
+        // const box = document.getElementById("box");
+        // const txt = document.getElementById("txt");
+
+        // document.body.addEventListener('focus', ()=> {
+        //     console.log('focus - 1. body');
+        // })
+        // box.addEventListener('focus', ()=> {
+        //     console.log('focus - 2. div');
+        // })
+        // txt.addEventListener('focus', ()=> {
+        //     console.log('focus - 3. input');
+        // })
+        // document.body.addEventListener('focusin', ()=> {
+        //     console.log('focusin - 1. body');
+        // })
+        // box.addEventListener('focusin', ()=> {
+        //     console.log('focusin - 2. div');
+        // })
+        // txt.addEventListener('focusin', (event)=> {
+        //     event.stopPropagation();
+        //     console.log('focusin - 3. input');
+        // })
+
+        // document.body.addEventListener('blur', ()=> {
+        //     console.log('blur - 1. body');
+        // })
+        // box.addEventListener('blur', ()=> {
+        //     console.log('blur - 2. div');
+        // })
+        // txt.addEventListener('blur', ()=> {
+        //     console.log('blur - 3. input');
+        // })
+        // document.body.addEventListener('focusout', ()=> {
+        //     console.log('focusout - 1. body');
+        // })
+        // box.addEventListener('focusout', ()=> {
+        //     console.log('focusout - 2. div');
+        // })
+        // txt.addEventListener('focusout', (event)=> {
+        //     event.stopPropagation();
+        //     console.log('focusout - 3. input');
+        // })
+
+
+        // 이벤트 위임 : 자신한테 발생하는 이벤트를 다른 요소에서 처리하는 것
+        // 자식 노드에 등록된 이벤트가 부모 노드에 있는 이벤트 핸들러를 실행해줌
+        const list = document.getElementById("list");
+        const colors = list.children;
+
+        function clickHandler(event) {
+            // currentTarget은 이벤트가 발생한 대상의 부모를 가리키고, target은 클릭된 요소를 가리킴
+            // 이벤트 위임을 사용하지 않았다면 currentTarget과 target은 동일
+            // console.log("target : ", event.target); // 이벤트를 발생시키는 요소
+            // console.log("current target : ", event.currentTarget); // 이벤트 핸들러가 등록된 요소
+            let target = event.target;
+            if(target.tagName === "A") {
+                target = target.parentElement;
+            } else if(target === event.currentTarget) {
+                return;
+            }
+            for(c of colors) {
+                c.classList.remove("on");
+            }
+            target.classList.add("on");
+        }
+
+        // 하기 방식은 코드가 길어지고, 성능이 나빠질 수 있음
+        // 유지보수가 힘듬
+        // document.getElementById("red").addEventListener("click", clickHandler);
+        // document.getElementById("blue").addEventListener("click", clickHandler);
+        // document.getElementById("green").addEventListener("click", clickHandler);
+        // document.getElementById("pink").addEventListener("click", clickHandler);
+        document.getElementById("list").addEventListener("click", clickHandler);
+    </script>
+</body>
+</html>
