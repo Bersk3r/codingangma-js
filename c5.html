@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+</head>
+<body>
+    <!--<button onclick="alert('클릭');">클릭1</button>
+    <button onclick="sayHello();">클릭2</button>
+    <button id="btn">클릭3</button>
+    <button id="btn2">클릭4</button>-->
+    <!--<button id="btn">클릭</button>-->
+    <!--<input type="text" id="txt" />-->
+   <!-- <div id="box" style="position:relative; width: 100px; height: 100px; border: 2px solid red;">
+        <div id="circle" style="position:absolute; width: 10px; height: 10px; background-color: #000; border-radius: 50%;"></div>
+    </div>-->
+    <script>
+        // 마우스 클릭이나, 키보드 입력이 주로 이벤트임
+        // input 창 포커스나 문서 로딩 완료가 되는 것도 이벤트
+        // 특정 함수를 할당하여 실행하게 만드는 것을 핸들러라고 함
+        // on..으로 시작되는 이벤트 타입을 적어주면 됨
+
+        // 이벤트 핸들러를 할당하는 방식
+        // function sayHello() {
+        //     alert("hello");
+        // }
+
+        // const el = document.getElementById('btn');
+        // el.onclick = sayHello;
+        // 이 떼 ()는 제외한다.
+        // 실행 시, 반환 값이 저장되므로
+
+        // const e2 = document.getElementById('btn2');
+        // e2.addEventListener('click', sayHello);
+        // e2.addEventListener('click', () => {
+        //     alert("hi");
+        // });
+        // addEventListener는 특정 이벤트가 발생되면 특정 함수나 핸들러를 실행
+        // 실무에서 addEventListener를 자주 사용 (HTML과 JS 분리 용이, 일부 이벤트를 처리 시에도 용이)
+        // 예시 : DOMContenetLoaded = 문서 로드가 완료되었을 때 발생
+        // document.addEventListener('DOMContentLoaded', () => {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        // 하기 코드는 동작하지 않음 (새로고침해도 동일)
+        // document.onDOMContentLoaded = () => {
+        //     document.body.style.backgroundColor = 'red';
+        // };
+
+        // 이벤트 리스너 제거
+        // removeEventListener
+        // 이미 할당된 핸들러를 삭제할 때 사용
+        // document.removeEventListener('DOMContentLoaded', () => {
+        //     document.body.style.backgroundColor = 'red';
+        // })
+
+        // function sayHello() {
+        //     alert('Hello');
+        // }
+
+        // 이벤트 종류
+        // dblclick : 더블 클릭
+        // const el = document.getElementById("btn");
+        // el.addEventListener("dblclick", sayHello);
+
+        // keyup / keydown : 키를 누르거나 땔 때 발생
+        // 이벤트 핸들러는 이벤트 객체를 인수로 받음
+        // const input = document.getElementById('txt');
+        // input.addEventListener('keyup', (event) => {
+        //     // console.log(event);
+        //     console.log(event.key);
+        // });
+
+        // input text에는 focus/focusin, blur/focusout이 존재
+        // 각 역할을 비슷하나 차이점은 이벤트 버블링에서 설명
+
+        // focus / blur : input에 focus가 있을 떄 focus 이벤트 발생, 잃을 때 blur 이벤트 발생
+        // focus가 일어났을 때 input 창의 배경색 변경, 벗어나면 해제
+        // const input = document.getElementById('txt');
+        // input.addEventListener('focus', (event) => {
+        //     input.style.backgroundColor = 'rgba(255,0,0,0.2)';
+        // });
+        // input.addEventListener('blur', (event) => {
+        //     input.style.backgroundColor = null;
+        // });
+
+        // mousemove : 마우스를 움직일 때마다 발생하는 이벤트
+        // 박스 내부에서 마우스를 움직일 때마다 이벤트가 발생
+        // clientX / ClientY 값을 통해 현재 마우스 포인터 위치를 알 수 있음
+        // const box = document.getElementById("box");
+        // const circle = document.getElementById("circle");
+        // box.addEventListener('mousemove', (event) => {
+        //     // console.log(event);
+        //     circle.style.top = `${event.clientY}px`;
+        //     circle.style.left = `${event.clientX}px`;
+        // })
+
+        // window의 resizing 이벤트
+        // window.addEventListener('resize', () => {
+        //     document.body.innerText = `현재 창의 크기는 ${window.innerWidth} x ${window.innerHeight}`;
+        // })
+
+        // 이벤트 타입은 많으며, 영상에선 자주 사용하는 것만 다룸
+        // 공식 문서를 참조하면서 여러 상황을 연습하는 게 좋음
+    </script>
+</body>
+</html>
